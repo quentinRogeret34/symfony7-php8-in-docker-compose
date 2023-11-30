@@ -1,8 +1,8 @@
 version: '3.7'
 services:
-    php8-sf6:
-        container_name: php8-sf6
-        build: php8-sf6
+    php8-sf7:
+        container_name: php8-sf7
+        build: php8-sf7
         ports:
             - "9000:8000"
         volumes:

@@ -1,4 +1,4 @@
-FROM php:8.0.13-cli
+FROM php:8.3.0-cli
 
 RUN apt-get update \
     &&  apt-get install -y --no-install-recommends \
@@ -12,8 +12,7 @@ RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen  \
 RUN curl -sS https://getcomposer.org/installer | php -- \
     &&  mv composer.phar /usr/local/bin/composer
 
-RUN curl -sS https://get.symfony.com/cli/installer | bash \
-    &&  mv /root/.symfony/bin/symfony /usr/local/bin
+RUN curl -sS https://get.symfony.com/cli/installer | bash -s - --install-dir /usr/local/bin
 
 RUN docker-php-ext-configure \
             intl \
